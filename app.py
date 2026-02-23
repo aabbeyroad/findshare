@@ -25,7 +25,7 @@ from fastapi.responses import FileResponse
 from fastapi.staticfiles import StaticFiles
 from pydantic import BaseModel, Field
 
-from scrapers import DaangnScraper, PeterpanzScraper
+from scrapers import DaangnScraper, PeterpanzScraper, NaverCafeScraper
 
 # 로그 설정
 logging.basicConfig(
@@ -63,10 +63,12 @@ app.mount("/static", StaticFiles(directory="static"), name="static")
 SCRAPERS = {
     "daangn": DaangnScraper,
     "peterpanz": PeterpanzScraper,
+    "naver_cafe": NaverCafeScraper,
 }
 
 SCRAPER_NAMES = {
     "daangn": "당근마켓",
+    "naver_cafe": "네이버 카페",
     "peterpanz": "피터팬",
 }
 

@@ -462,6 +462,11 @@
       color: #2E7D32;
     }
 
+    .source-naver {
+      background: #E8F0FE;
+      color: #1967D2;
+    }
+
     .source-default {
       background: var(--primary-light);
       color: var(--primary);
@@ -656,6 +661,11 @@
             <span class="site-dot" style="background:#4CAF50;"></span>
             피터팬
           </label>
+          <label class="site-checkbox">
+            <input type="checkbox" name="site" value="naver_cafe" checked />
+            <span class="site-dot" style="background:#03C75A;"></span>
+            네이버 카페
+          </label>
         </div>
       </div>
 
@@ -770,7 +780,7 @@
         overlay.classList.add('visible');
 
         // 검색 중인 사이트 표시
-        const siteNames = { daangn: '당근마켓', peterpanz: '피터팬' };
+        const siteNames = { daangn: '당근마켓', peterpanz: '피터팬', naver_cafe: '네이버 카페' };
         loadingSites.innerHTML = sites
           .map(s => `<span class="loading-site-badge">${siteNames[s] || s}</span>`)
           .join('');
@@ -830,8 +840,9 @@
       const meta = document.getElementById('results-meta');
       meta.innerHTML = Object.entries(sourceCount)
         .map(([src, cnt]) => {
-          const cls = src === '당근마켓' ? 'source-daangn'
-                    : src === '피터팬'   ? 'source-peterpanz'
+          const cls = src === '당근마켓'        ? 'source-daangn'
+                    : src === '피터팬'           ? 'source-peterpanz'
+                    : src.startsWith('네이버 카페') ? 'source-naver'
                     : 'source-default';
           return `<span class="source-badge ${cls}">${src} ${cnt}건</span>`;
         })
@@ -843,8 +854,9 @@
 
     function renderCard(listing) {
       // 출처에 따른 배지 색상
-      const badgeClass = listing.source === '당근마켓' ? 'source-daangn'
-                       : listing.source === '피터팬'   ? 'source-peterpanz'
+      const badgeClass = listing.source === '당근마켓'              ? 'source-daangn'
+                       : listing.source === '피터팬'                ? 'source-peterpanz'
+                       : listing.source.startsWith('네이버 카페')   ? 'source-naver'
                        : 'source-default';
 
       // 이미지 영역

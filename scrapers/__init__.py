@@ -3,5 +3,6 @@
 from .base import BaseScraper, Listing
 from .daangn import DaangnScraper
 from .peterpanz import PeterpanzScraper
+from .naver_cafe import NaverCafeScraper
 
-__all__ = ["BaseScraper", "Listing", "DaangnScraper", "PeterpanzScraper"]
+__all__ = ["BaseScraper", "Listing", "DaangnScraper", "PeterpanzScraper", "NaverCafeScraper"]

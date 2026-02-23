@@ -8,13 +8,34 @@
 
 ## 🚀 온라인으로 배포하기
 
-이미 완성된 앱입니다! **Railway.app**에서 무료로 배포 가능합니다.
+이미 완성된 앱입니다! 다양한 방법으로 무료 배포 가능합니다.
 
-👉 **[배포 가이드는 DEPLOYMENT.md를 참고하세요](./DEPLOYMENT.md)**
+### 1️⃣ **Vercel로 배포 (가장 간단)**
 
-- ✅ Railway.app (추천, 매우 간단)
-- ✅ Render.com (무료 옵션)
-- ✅ 로컬 네트워크 공유 (같은 WiFi에서 접근)
+**[VERCEL_DEPLOYMENT.md](./VERCEL_DEPLOYMENT.md)** 참고
+
+```bash
+# 1. GitHub에 푸시
+git push origin main
+
+# 2. Vercel에서 import (GitHub 연동)
+# 3. 자동 배포 완료! (2-3분)
+```
+
+✨ **Vercel의 장점:**
+- GitHub과 자동 연동 (push = 자동 배포)
+- 무료 tier 넉넉함
+- 빠른 배포 속도
+
+---
+
+### 2️⃣ **Railway.app 배포**
+
+**[DEPLOYMENT.md](./DEPLOYMENT.md)** 참고 (상세 가이드 포함)
+
+- Railway (Docker 기반, 무료 크레딧)
+- Render.com (무료 옵션)
+- 로컬 네트워크 공유
 
 ---
 
